@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/factories', function () use ($router) {
+    //\App\Models\Course::factory()->count(10)->create();
+
+    return \App\Models\Course::all();
+});

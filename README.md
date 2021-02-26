@@ -22,3 +22,55 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installation Guide 
+
+For the linux distro Manjaro (with pacman package manager), follow this:
+
+### 1. To install composer:
+
+```
+sudo pacman -S php apache php-apache mariadb composer
+```
+
+### 2. To create the project: 
+
+```
+composer create-project --prefer-dist laravel/lumen name_of_the_project
+```
+
+### 3. To open the server
+
+```
+php -S localhost:8000 -t public
+```
+
+### 4. To use sqlite:
+
+```
+sudo gedit /etc/php/php.ini and uncommit the line ;extension=pdo_sqlite
+```
+
+### 5. To install the sqlite library:
+
+```
+sudo pacman -S php-sqlite
+```
+
+php artisan make:migration create_name_table --create=courses
+php artisan make:seeder NameTableSeeder 
+
+## Websites
+
+https://manjariando.com.br/2018/10/30/instalar-laravel-no-manjaro/
+
+https://lumen.laravel.com/docs/8.x
+
+https://samuel-turner.co.uk/installing-composer-in-manjaro/
+
+https://cursos.alura.com.br/forum/topico-erro-ao-tentar-php-artisan-migrate-84751
+
+
+
+
+
