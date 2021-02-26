@@ -23,52 +23,88 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+---
+
 ## Installation Guide 
 
-For the linux distro Manjaro (with pacman package manager), follow this:
+This guide was made for the linux distro Manjaro, with **pacman package manager**.
 
-### 1. To install composer:
+#### 1. Install composer:
 
 ```
 sudo pacman -S php apache php-apache mariadb composer
 ```
 
-### 2. To create the project: 
+#### 2. Create project: 
 
 ```
 composer create-project --prefer-dist laravel/lumen name_of_the_project
 ```
 
-### 3. To open the server
+#### 3. Start server
 
 ```
 php -S localhost:8000 -t public
 ```
 
-### 4. To use sqlite:
+#### 4. Use sqlite:
 
 ```
 sudo gedit /etc/php/php.ini and uncommit the line ;extension=pdo_sqlite
 ```
 
-### 5. To install the sqlite library:
+#### 5. Install the sqlite library:
 
 ```
 sudo pacman -S php-sqlite
 ```
 
+#### 6. Install postman:
+
+```
+sudo snap install postman
+```
+
+If you don't have Snap installed, follow the instructions [here](https://snapcraft.io/install/postman/manjaro).
+
+## Use Guide
+
+#### 1. To create a migration
+```
 php artisan make:migration create_name_table --create=courses
+```
+
+#### 2. To create a seeder
+```
 php artisan make:seeder NameTableSeeder 
+```
 
-## Websites
+#### 3. Seed the database
 
-https://manjariando.com.br/2018/10/30/instalar-laravel-no-manjaro/
+```
+php artisan db:seed
+```
 
-https://lumen.laravel.com/docs/8.x
+---
 
-https://samuel-turner.co.uk/installing-composer-in-manjaro/
+## References
+#### Websites
 
-https://cursos.alura.com.br/forum/topico-erro-ao-tentar-php-artisan-migrate-84751
+- [Instalar Laravel no Manjaro](https://manjariando.com.br/2018/10/30/instalar-laravel-no-manjaro/)
+
+- [Lumen Documentation](https://lumen.laravel.com/docs/8.x)
+
+- [Installing Composer in Manjaro](https://samuel-turner.co.uk/installing-composer-in-manjaro/)
+
+- [Erro ao tentar php artisan migrate](https://cursos.alura.com.br/forum/topico-erro-ao-tentar-php-artisan-migrate-84751)
+
+#### Videos
+
+- [Sua Primeira API REST com Lumen](https://www.youtube.com/watch?v=1YT3DnbirKg&t=446s&ab_channel=CodeExperts)
+
+- [Laravel 8 - Novidades - Factories Melhorias](https://www.youtube.com/watch?v=h0AgqMmZlfk&ab_channel=CodeExperts)
+
+
 
 
 
